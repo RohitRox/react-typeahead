@@ -599,7 +599,35 @@ describe('Typeahead Component', function() {
           assert.equal(null, component.state.selectionIndex);
         });
       });
+    });
 
+    context('noResultsMessage', function() {
+      context('when present', function() {
+        context('and options are present', function() {
+          it('does not render no results message', function() {
+            var component = TestUtils.renderIntoDocument(
+              <Typeahead
+                options={ BEATLES }
+                noResultsMessage='No Matches Found.'
+              />
+            );
+            var noMessageElement = TestUtils.scryRenderedDOMComponentsWithClass(component, 'typeahead-no-matches');
+            assert.equal(0, noMessageElement.length);
+          });
+        });
+        context('and options are empty', function() {
+          it('renders no results message', function() {
+            var component = TestUtils.renderIntoDocument(
+              <Typeahead
+                options={ [] }
+                noResultsMessage='No Matches Found.'
+              />
+            );
+            var noMessageElement = TestUtils.scryRenderedDOMComponentsWithClass(component, 'typeahead-no-matches');
+            assert.equal(0, noMessageElement.length);
+          });
+        });
+      });
     });
 
     context('showOptionsWhenEmpty', function() {
