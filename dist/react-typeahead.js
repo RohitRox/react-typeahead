@@ -660,7 +660,9 @@ var Typeahead = React.createClass({
       customClasses: this.props.customClasses,
       selectionIndex: this.state.selectionIndex,
       defaultClassNames: this.props.defaultClassNames,
-      displayOption: Accessor.generateOptionToStringFor(this.props.displayOption) });
+      displayOption: Accessor.generateOptionToStringFor(this.props.displayOption),
+      noResultsMessage: this.props.noResultsMessage
+    });
   },
 
   getSelection: function () {
@@ -976,13 +978,20 @@ var TypeaheadSelector = React.createClass({
       allowCustomValues: 0,
       customValue: null,
       onOptionSelected: function (option) {},
-      defaultClassNames: true
+      defaultClassNames: true,
+      noResultsMessage: null
     };
   },
 
   render: function () {
     // Don't render if there are no options to display
-    if (!this.props.options.length && this.props.allowCustomValues <= 0) {
+    if (!this.props.options.length && this.props.noResultsMessage) {
+      return React.createElement(
+        'div',
+        { className: 'typeahead-no-matches' },
+        this.props.noResultsMessage
+      );
+    } else if (!this.props.options.length && this.props.allowCustomValues <= 0) {
       return false;
     }
 
