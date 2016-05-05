@@ -984,15 +984,16 @@ var TypeaheadSelector = React.createClass({
   },
 
   render: function () {
-    // Don't render if there are no options to display
-    if (!this.props.options.length && this.props.noResultsMessage) {
-      return React.createElement(
-        'div',
-        { className: 'typeahead-no-matches' },
-        this.props.noResultsMessage
-      );
-    } else if (!this.props.options.length && this.props.allowCustomValues <= 0) {
-      return false;
+    if (!this.props.options.length) {
+      if (this.props.noResultsMessage) {
+        return React.createElement(
+          'div',
+          { className: 'typeahead-no-matches' },
+          this.props.noResultsMessage
+        );
+      } else if (this.props.allowCustomValues <= 0) {
+        return false;
+      }
     }
 
     var classes = {
