@@ -299,6 +299,10 @@ var Typeahead = React.createClass({
       typeaheadOptionsState.selectionIndex = 0;
     }
 
+    if (this.props.initialValue != nextProps.initialValue) {
+      typeaheadOptionsState.entryValue = nextProps.initialValue;
+    }
+
     this.setState(typeaheadOptionsState);
   },
 
