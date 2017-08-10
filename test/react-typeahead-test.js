@@ -1,6 +1,6 @@
 var assert = require('chai').assert;
 var React = require('react');
-var TestUtils = require('react-addons-test-utils');
+var TestUtils = require('react-dom/test-utils');
 var ReactTypeahead = require('../src/react-typeahead').Typeahead;
 var ReactTokenizer = require('../src/react-typeahead').Tokenizer;
 

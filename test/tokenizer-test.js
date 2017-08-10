@@ -9,7 +9,7 @@ var TypeaheadSelector = require('../src/typeahead/selector');
 var Tokenizer = require('../src/tokenizer');
 var Token = require('../src/tokenizer/token');
 var Keyevent = require('../src/keyevent');
-var TestUtils = require('react-addons-test-utils');
+var TestUtils = require('react-dom/test-utils');
 
 function simulateTextInput(component, value) {
   var node = component.refs.entry;

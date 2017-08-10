@@ -44,6 +44,7 @@
     "babelify": "^7.2.0",
     "browserify": "^8.0.2",
     "chai": "^1.9.1",
+    "create-react-class": "15.6.0",
     "es5-shim": "^4.0.1",
     "gulp": "^3.8.7",
     "gulp-babel": "^6.1.2",
@@ -51,6 +52,9 @@
     "literalify": "^0.4.0",
     "lodash": "^2.4.1",
     "mocha": "^1.21.4",
+    "prop-types": "15.5.10",
+    "react": "15.6.1",
+    "react-dom": "15.6.1",
     "react-tools": "^0.13.3",
     "sinon": "^1.10.3",
     "watchify": "^2.2.1"
